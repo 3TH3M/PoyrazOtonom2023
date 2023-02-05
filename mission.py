@@ -1,13 +1,12 @@
 #Poyraz Havacılık - BED 
-
 import cv2
 import numpy as np
 from dronekit import Vehicle, connect, VehicleMode, LocationGlobalRelative, Command
 from pymavlink import mavutil
 from pyzbar.pyzbar import decode
 
-connection_string="127.0.0.1:14550"
-
+connection_string="/dev/ttyACM0"
+baud_rate = 115200
 vehicle = connect(connection_string, baud=115200, wait_ready=True)
 
 cap=cv2.VideoCapture(0) #video yakalama ve çözünürlük için gerekli kodlar
